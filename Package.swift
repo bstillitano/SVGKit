@@ -5,8 +5,8 @@ let package = Package(
     name: "SVGKit",
     platforms: [
         .macOS(.v10_10),
-        .iOS(.v13),
-        .tvOS(.v13)
+        .iOS(.v12),
+        .tvOS(.v12)
     ],
     products: [
         .library(
@@ -19,13 +19,13 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMinor(from: "3.7.0"))
+        .package(url: "https://github.com/apple/swift-log.git", .upToNextMajor(from: "1.4.4"))
     ],
     targets: [
         .target(
             name: "SVGKit",
             dependencies: [
-                "CocoaLumberjack"
+                .product(name: "Logging", package: "swift-log")
             ],
             path: "Source",
             exclude: [
