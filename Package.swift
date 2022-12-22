@@ -18,15 +18,11 @@ let package = Package(
             targets: ["SVGKitSwift"]
         )
     ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-log.git", .upToNextMajor(from: "1.4.4"))
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "SVGKit",
-            dependencies: [
-                .product(name: "Logging", package: "swift-log")
-            ],
+            dependencies: [],
             path: "Source",
             exclude: [
                 "SwiftUI additions"
